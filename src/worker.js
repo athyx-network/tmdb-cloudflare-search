@@ -11,8 +11,8 @@ export default {
       return jsonResponse(
         {
           error: "Missing search query.",
-          usage: "Use ?query=inside out or ?q=inside out",
-          example: `${requestUrl.origin}/?query=inside%20out`
+          usage: "Use ?query=your+search+term in the end of the url",
+          example: `${requestUrl.origin}/?query=mr robot`
         },
         400
       );

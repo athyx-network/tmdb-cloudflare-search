@@ -31,19 +31,3 @@ http://localhost:8787/?q=inside%20out
 ```powershell
 npm run deploy
 ```
-
-## Response
-
-```json
-{
-  "query": "inside out",
-  "results": [
-    {
-      "type": "movie",
-      "name": "Inside Out",
-      "tmdb_id": "150540",
-      "link": "https://www.themoviedb.org/movie/150540-inside-out?language=en-US"
-    }
-  ]
-}
-```
