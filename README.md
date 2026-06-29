@@ -1,6 +1,6 @@
 # TMDB Cloudflare Worker Search Extractor
 
-A Cloudflare Worker that searches TMDB movies and TV shows, automatically fetches every search result page, and returns only the result name, TMDB ID, and link.
+A Cloudflare Worker that searches TMDB movies and TV shows, automatically fetches every search result page, and returns the result name, TMDB ID, TMDB link, and cover image link.
 
 ## Install
 

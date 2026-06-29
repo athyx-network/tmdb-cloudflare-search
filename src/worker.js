@@ -103,6 +103,7 @@ function extractResults(html, type) {
     const card = match[0];
     const titleMatch = card.match(/<h2\b[^>]*>[\s\S]*?<span\b[^>]*>([\s\S]*?)<\/span>[\s\S]*?<\/h2>/i);
     const linkMatch = card.match(new RegExp(`<a\\b[^>]*data-media-type="${type}"[^>]*href="([^"]+)"`, "i"));
+    const imageMatch = card.match(/<img\b[^>]*\bsrc="([^"]+)"/i);
 
     if (!titleMatch || !linkMatch) {
       continue;
@@ -111,13 +112,15 @@ function extractResults(html, type) {
     const name = decodeHtml(stripTags(titleMatch[1]));
     const link = absoluteTmdbLink(decodeHtml(linkMatch[1]));
     const tmdbId = extractTmdbId(link, type);
+    const coverImage = imageMatch ? decodeHtml(imageMatch[1]) : null;
 
     if (name && tmdbId) {
       results.push({
         type,
         name,
         tmdb_id: tmdbId,
-        link
+        link,
+        cover_image: coverImage
       });
     }
   }
